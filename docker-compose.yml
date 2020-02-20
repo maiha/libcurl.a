@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  curl-builder:
+    build: .
+    command: build curl-${CURL_VERSION}
+    user: "${UID}:${GID}"
+    volumes:
+      - .:/v
+    working_dir: /v
